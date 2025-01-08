@@ -22,6 +22,7 @@ class ProductViewSet(ModelViewSet):
         cache_key = f'product_{obj.pk}'
         cached_data = cache.get(cache_key)
         if cached_data:
+            print("Cache hit:", cache_key)
             return Response(cached_data)
         response = super().retrieve(request, *args, **kwargs)
         cache.set(cache_key, response.data, timeout=3600)
