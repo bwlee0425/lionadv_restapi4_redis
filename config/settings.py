@@ -59,6 +59,13 @@ CACHES = {
     }
 }
 
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+#         'LOCATION': 'redis://hanslab.org:26379/1',
+#     }
+# }
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
